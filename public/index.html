@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>《天下》手游官方网站_两周年特别版</title>
+    <style>
+        body,p{
+            padding:0;
+            margin:0;
+        }
+        ul,li{
+            list-style-type:none;
+            padding:0;
+            margin:0;
+        }
+        .wrap {
+        width: 100%;
+        min-width: 1400px;
+        max-width: 1920px;
+        margin: 0 auto;
+        font-family: "Microsoft YaHei";
+        overflow: hidden;
+        }
+        .banner{
+            width: 100%;
+            height: 937px;
+            background: url("./img/index/banner1.jpg") no-repeat center;
+            position: relative;
+        }
+        .banner .title {
+            position: absolute;
+            width: 1028px;
+            height: 605px;
+            background: url("./img/index/title.png") no-repeat center;
+            top: 107px;
+            left: 50%;
+            margin-left: -728px;
+        }
+        .banner .logo {
+            position: absolute;
+            left: 62px;
+            top: 20px;
+            display: block;
+            width: 150px;
+            height: 81px;
+            background: url(./img/index/logo.webp) no-repeat center;
+        }
+        .banner .bigtit {
+            left: 228px;
+            position: absolute;
+            top: 38px;
+            display: block;
+            width: 177px;
+            height: 50px;
+            text-indent: -9999px;
+            background: url(./img/index/bigtit1.png) no-repeat center;
+        }
+        .banner .gw {
+            position: absolute;
+            right: 40px;
+            top: 14px;
+            display: block;
+            width: 132px;
+            height: 39px;
+            background: url(img/index/gw.png) no-repeat center;
+            opacity: .8;
+        }
+        .banner .center {
+            width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            height: 100%;
+        }
+        .banner .pvideo {
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            top: 425px;
+            left: 50%;
+            margin-left: 22px;
+            z-index: 9;
+            cursor: pointer;
+        }
+        .banner .pvideo .video {
+            position: absolute;
+            left: 50%;
+            margin-left: -35px;
+            margin-top: -35px;
+            top: 50%;
+            background: url(img/index/video.png) no-repeat;
+            width: 70px;
+            height: 70px;
+            z-index: 10;
+        }
+        .banner .pvideo i {
+            background: url(img/index/video_rotate.png) right center no-repeat;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 70px;
+            height: 70px;
+            -moz-animation: aniRound 10s linear 0s infinite;
+            -webkit-animation: aniRound 10s linear 0s infinite;
+            -o-animation: aniRound 10s linear 0s infinite;
+            -ms-animation: aniRound 10s linear 0s infinite;
+            animation: aniRound 10s linear 0s infinite;
+            z-index: 1;
+        }
+        @keyframes aniRound{
+            0%{
+                transform: rotateZ(0deg)
+            }
+            100%{
+                transform: rotateZ(360deg)
+            }
+        }
+        .banner .download {
+            width: 455px;
+            height: 150px;
+            position: absolute;
+            top: 574px;
+            margin-left: 121px;
+        }
+        .download .download_icon {
+            float: left;
+            margin-top: 5px;
+            margin-right: 10px;
+            width: 110px;
+        }
+        .download .scan_frame{
+            float: left;
+            width:110px;
+            height:110px;
+            margin-top:5px;
+            position: relative;
+        }
+        .download .scan_frame img{
+            width: 100%;
+            height:100%;
+        }
+        .download .scan_frame .scan_line{
+            position: absolute;
+            width:100%;
+            height:9px;
+            background:url(img/index/line.png) 0 0 no-repeat;
+            background-size: cover;
+            -moz-animation: mainbarcode 2.5s linear infinite;
+            -webkit-animation: mainbarcode 2.5s linear infinite;
+            -o-animation: mainbarcode 2.5s linear infinite;
+            -ms-animation: mainbarcode 2.5s linear infinite;
+            animation: mainbarcode 2.5s linear infinite;
+        }
+        @keyframes mainbarcode{
+            0%{
+                top:0;
+            }
+            100%{
+                top:101px;
+            }
+        }
+        .download .sao {
+            float: left;
+            width: 16px;
+            height: 110px;
+            background: url(img/index/sao.png) no-repeat;
+            margin: 6px 6px 0 16px;
+        }
+        .download .buttons {
+            float: left;
+            margin: 5px 0 0 10px;
+        }
+        .download .buttons a {
+            display: block;
+            width: 176px;   
+            height: 52px;
+            background:url(img/index/index_download.png)
+        }
+        .download .buttons a.link-apple:hover{
+            background-position-y:-52px;
+        }
+        .download .buttons a.link-android{
+            margin-top: 6px;
+            background-position-y:-104px;
+        }
+        .download .buttons a.link-android:hover{
+            background-position:-176px 0;
+        }
+        .download .pc_download {
+            float: left;
+            display: block;
+            margin-top: 10px;
+            width: 221px;
+            height: 50px;
+            background: url(img/index/btn-dldwin.png) no-repeat;
+            overflow: hidden;
+        }
+        .download .pc_download:hover{
+            background: url(img/index/btn-dldwin-h.png) no-repeat;
+        }
+        .download .mac_download {
+            float: left;
+            display: block;
+            margin-top: 10px;
+            margin-left:12px;
+            width: 221px;
+            height: 50px;
+            background: url(img/index/btn-dldmac.png) no-repeat;
+        }
+        .download .mac_download:hover{
+            background: url(img/index/btn-dldmac-h.png) no-repeat;
+        }
+        .center{
+            width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .part1{
+            width: 100%;
+            height: 620px;
+            background: url(img/index/part1.jpg) no-repeat center;
+        }
+        .part1 .center {
+            height: 100%;
+            overflow: hidden;
+        }
+        .part1 .center .viewcenter{
+            width:2400px;
+            position: absolute;
+            top:0;
+            transition:all .5s linear; 
+        }
+        .part1 .center .viewcenter .fullist{
+            width:1200px;
+            float: left;
+        }
+         .tit {
+            width: 491px;
+            height: 67px;
+            margin: 0 auto 33px;
+        }
+        .part1 .tit1{
+            background: url(img/index/tit1.png) no-repeat center;
+        }
+        .part1 .tit2{
+            background: url(img/index/wftit.png) no-repeat center;
+        }
+        .part1 .center .viewcenter .fuli{
+            margin:0 15px;
+            width: 274px;
+            height: 375px;
+            float: left;
+            margin: 0 11px;
+            position: relative;
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        .part1 .center .viewcenter ul::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .part1 .center .viewcenter .fuli.hhp1{
+            background:url(img/index/hhp1.png) no-repeat center;
+            transition: all .8s ease 0s;
+        }
+        .part1 .center .viewcenter .fuli.hhp2{
+            background:url(img/index/hhp2.png) no-repeat center;
+            transition: all .8s ease 0.2s;
+        }
+        .part1 .center .viewcenter .fuli.hhp3{
+            background:url(img/index/hhp3.png) no-repeat center;
+            transition: all .8s ease 0.4s;
+
+        }
+        .part1 .center .viewcenter .fuli.hhp4{
+            background:url(img/index/hhp4.png) no-repeat center;
+            transition: all .8s ease 0.6s;
+
+        }
+        .part1 .center .viewcenter .fuli.wfp1{
+            transition: all .8s ease 0s;
+            background:url(img/index/wfp1.png) no-repeat center;
+        }
+        .part1 .center .viewcenter .fuli.wfp2{
+            transition: all .8s ease 0.2s;
+            background:url(img/index/wfp2.png) no-repeat center;
+        }
+        .part1 .center .viewcenter .fuli.wfp3{
+            transition: all .8s ease 0.4s;
+            background:url(img/index/wfp3.png) no-repeat center;
+        }
+        .part1 .center .viewcenter .fuli.wfp4{ 
+            transition: all .8s ease 0.6s;
+            background:url(img/index/wfp4.png) no-repeat center;
+        }
+        .part1 .center .viewcenter .pbtn{
+            display: block;
+            width: 154px;
+            height: 34px;
+            background: url(img/index/pbtn.png) no-repeat center;
+            position: absolute;
+            left: 50%;
+            margin-left: -77px;
+            bottom: 32px;
+            opacity: .8;
+            transition: all .3s linear;
+        }
+        .part1 .center .viewcenter .pbtn:hover{
+            opacity: 1;
+        }
+        .part1 .center .viewcenter .fuli.unshow{
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .part1 .center .indictors{
+            position: absolute;
+            width: 90px;
+            left: 50%;
+            margin-left: -45px;
+            bottom: 80px;
+        }
+        .part1 .center .indictors li{
+            float: left;
+            width: 16px;
+            height: 35px;
+            background: url(img/index/icon11.png) no-repeat;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        .part1 .center .indictors li.on{
+            background-position: -60px 0;
+            width:60px;
+        }
+        .part2 {
+            width: 100%;
+            height: 1006px;
+            background: url(img/index/part2.jpg) no-repeat center;
+        }
+        .part2 .tit{
+            margin-bottom:0;
+            background: url(img/index/tit2.png) no-repeat center;
+        }
+        .part2 .center .wrapcontent{
+            position: relative;
+            width: 1920px;
+            height: 800px;
+            left: 50%;
+            margin-left: -960px;
+        }
+        .part2 .center .wrapcontent .swipecontent{
+            width:13440px;
+            position: relative;
+        }
+        .part2 .center .wrapcontent .swipecontent .imgcontent{
+            float: left;
+            width:1920px;
+        }
+        .part2 .center .wrapcontent .swipecontent img{
+            width: 1890px;
+            vertical-align: top;
+            position: relative;
+            left:40px;
+            top:-7px;
+        }
+        .part2 .center .control a{
+            height:88px;
+            width:54px;
+            position:absolute;
+            top:50%;
+            margin-top:-44px;
+        }
+        .part2 .center .control a.prev{
+            background:url(img/index/left.png);
+            left:-75px;
+        }
+        .part2 .center .control a.next{
+            background:url(img/index/right.png);
+            right:-55px;
+        }
+        .part3{
+            width: 100%;
+            height: 804px;
+            background: url(img/index/part3.jpg) no-repeat center;
+        }
+        .part3 .tit{
+            background: url(img/index/tit3.png);
+        }
+        .part3 .center{
+            height:528px;
+        }
+        .part3 .center .mpcontainer{
+            width: 1295px;
+            left: 50%;
+            position: absolute;
+            margin-left: -645px;
+            height: 100%;
+        }
+        .part3 .center .mpcontainer .mp{
+            float: left;
+            width: 215px;
+            height: 528px;
+            cursor: default;
+            opacity: .9;
+            transform: translateY(0px);
+        }
+        .part3 .center .mpcontainer .mp.unshow{
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        .part3 .center .mpcontainer .mp1{
+            background: url(img/index/mp1.png)
+        }
+        .part3 .center .mpcontainer .mp2{
+            background: url(img/index/mp2.png)
+        }
+        .part3 .center .mpcontainer .mp3{
+            background: url(img/index/mp3.png)
+        }
+        .part3 .center .mpcontainer .mp4{
+            background: url(img/index/mp4.png)
+        }
+        .part3 .center .mpcontainer .mp5{
+            background: url(img/index/mp5.png)
+        }
+        .part3 .center .mpcontainer .mp6{
+            background: url(img/index/mp6.png)
+        }
+        #NIE-copyRight {
+            width: 1000px;
+            margin:0 auto;
+            color: #7a7a7a;
+        }
+        #NIE-copyRight a{
+            color: #7a7a7a;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="banner">
+            <h3 class="title"></h3>
+            <a href="/main.html" class="logo" target="_blank"></a>
+            <p class="bigtit"></p>
+            <a href="/main.html" class="gw" target="_blank"></a>
+            <!-- <a href="#">分享图片找不到</a> -->
+            <div class="center">
+                <div class="pvideo">
+                    <div class="video"></div>
+                    <i></i>
+                </div>
+                <div class="download">
+                    <img src="img/index/icon.webp"  class="download_icon">
+                    <div class="scan_frame" title="扫码下载">
+                        <span class="scan_line"></span>
+                        <img src="img/index/erweima.png" alt="扫码下载">
+                    </div>
+                    <div class="sao"></div>
+                    <div class="buttons">
+                        <a href="#" class="link-apple" title="苹果版下载"></a>
+                        <a href="#" class="link-android" title="安卓版下载"></a>
+                    </div>
+                    <a href="#" class="pc_download" title="pc版下载"></a>
+                    <a href="#" class="mac_download" title="mac版下载"></a>
+                </div>
+            </div>
+        </div>
+        <div class="part1">
+            <div class="center">
+                <div class="viewcenter">
+                        <div class="fullist">
+                            <h2 class="tit tit1"></h2>
+                            <ul>
+                                <li class="hhp1 fuli unshow"><a href="#" class="pbtn"></a></li>
+                                <li class="hhp2 fuli unshow"><a href="#" class="pbtn"></a></li>
+                                <li class="hhp3 fuli unshow"><a href="#" class="pbtn"></a></li>
+                                <li class="hhp4 fuli unshow"><a href="#" class="pbtn"></a></li>
+                            </ul>
+                        </div>
+                        <div class="fullist">
+                            <h2 class="tit tit2"></h2>
+                            <ul>
+                                <li class="wfp1 fuli unshow"><a href="#" class="pbtn"></a></li>
+                                <li class="wfp2 fuli unshow"><a href="#" class="pbtn"></a></li>
+                                <li class="wfp3 fuli unshow"><a href="#" class="pbtn"></a></li>
+                                <li class="wfp4 fuli unshow"><a href="#" class="pbtn"></a></li>
+                            </ul>
+                        </div>
+                </div>
+                <ul class="indictors">
+                    <li class="on"></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="part2">
+            <h2 class="tit"></h2>
+            <div class="center">
+               <div class="wrapcontent">
+                    <div class="swipecontent" >
+                       <div class="imgcontent"><img src="img/index/ts-1.png" alt=""></div>
+                       <div class="imgcontent"><img src="img/index/ts-2.png" alt=""></div>
+                       <div class="imgcontent"><img src="img/index/ts-3.png" alt=""></div>
+                       <div class="imgcontent"><img src="img/index/ts-4.png" alt=""></div>
+                       <div class="imgcontent"><img src="img/index/ts-5.png" alt=""></div>
+                       <div class="imgcontent"><img src="img/index/ts-6.png" alt=""></div>
+                       <div class="imgcontent"><img src="img/index/ts-1.png" alt=""></div>
+                   </div>
+               </div> 
+               <div class="control">
+                   <a href="#" class="prev"></a>
+                   <a href="#" class="next"></a>
+               </div>
+            </div>
+        </div>
+        <div class="part3">
+            <h2 class="tit"></h2>
+            <div class="center">
+                <div class="mpcontainer">
+                    <a class="mp1 mp unshow" style="transition: all 0.8s ease 0s" href="javascript:;"></a>
+                    <a class="mp2 mp unshow" style="transition: all 0.8s ease 0.2s" href="javascript:;"></a>
+                    <a class="mp3 mp unshow" style="transition: all 0.8s ease 0.4s" href="javascript:;"></a>
+                    <a class="mp4 mp unshow" style="transition: all 0.8s ease 0.6s" href="javascript:;"></a>
+                    <a class="mp5 mp unshow" style="transition: all 0.8s ease 0.8s" href="javascript:;"></a>
+                    <a class="mp6 mp unshow" style="transition: all 0.8s ease 1s" href="javascript:;"></a> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script>
+        $.ajax({
+            type:'get',
+            url:'http://127.0.0.1:3000/bottom.html',
+            success:function(result){
+                $('.part3').append($(result));
+            }
+        })
+        window.onscroll=function(){
+            if($(window).scrollTop()+innerHeight>=$(".part1 .center").offset().top){
+                $(".fuli").removeClass("unshow")
+            }
+            if($(window).scrollTop()+innerHeight>=$(".part3 .center").offset().top){
+                $(".mp").removeClass("unshow");
+                console.log(1)
+            }
+        }
+        $('.part1 .indictors').on("click","li",function(){
+            var $li=$(this);
+            if(!$li.is(".on")){
+                $li.siblings().removeClass("on");
+                $li.addClass('on');
+                $('.part1 .viewcenter').css({"transform":"translateX("+-$li.index()*1200+"px)"})
+            }
+        })
+        var i=0;
+        var $swipe=$('.swipecontent');
+        function move(){
+            if(i==6){
+                $swipe.css({left:"0px"})
+                i=0;
+            }
+            i++;
+            $swipe.animate({left:`${-i*1920}px`},500);
+        }
+        var swipeInterval=setInterval(move,4000);
+        function getleft(){
+            return -parseInt($swipe.css("left"))/1920;
+        }
+        $('.part2 .control').on('click','a',function(e){
+            e.preventDefault();
+            $a=$(this);
+            if($a.is('.prev')){
+                if(!$swipe.is(':animated')){
+                    clearInterval(swipeInterval);
+                    if(getleft()==0){
+                        $swipe.css({left:"-11520px"});
+                        i=6;
+                    }
+                    i--;
+                    $swipe.animate({left:`${-i*1920}px`},500,function(){
+                        swipeInterval=setInterval(move,5000);
+                    });
+                }
+            }else{
+                if(!$swipe.is(':animated')){
+                    clearInterval(swipeInterval);
+                    if(getleft()==6){
+                        $swipe.css({left:"0px"});
+                        i=0;
+                    }
+                    i++;
+                    $swipe.animate({left:`${-i*1920}px`},500,function(){
+                        swipeInterval=setInterval(move,5000);
+                    });
+                }
+            }
+        })
+    </script>
+</body>
+</html>

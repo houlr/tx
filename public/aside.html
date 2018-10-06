@@ -1,0 +1,235 @@
+<style type="text/css">
+.aside {
+    float: right;
+    margin-bottom: 10px;
+    width: 335px;
+    background: #fff;
+    -webkit-box-shadow: 0 0 10px #eee;
+    -moz-box-shadow: 0 0 10px #eee;
+    -ms-box-shadow: 0 0 10px #eee;
+    box-shadow: 0 0 10px #eee;
+}
+#NIE-download {
+    width: 287px;
+    margin: 20px auto;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #e1e2e7;
+    overflow: hidden;
+}
+.aside .guide {
+    display: none;
+    position: relative;
+    margin: 0 auto;
+    width: 290px;
+    overflow: hidden;
+}
+#NIE-download .NIE-qrcode {
+    background-color: #ecedf2;
+    position: relative;
+    float: left;
+    width: 106px;
+    height: 106px;
+    overflow: hidden;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+#NIE-download .NIE-qrcode:after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -48.5px;
+    width: 97px;
+    height: 5px;
+    background: url(img/aside/download_line.png) no-repeat;
+    content: ' ';
+    -webkit-animation: anime_line 2.5s linear infinite;
+    -moz-animation: anime_line 2.5s linear infinite;
+    -ms-animation: anime_line 2.5s linear infinite;
+    animation: anime_line 2.5s linear infinite;
+}
+@keyframes anime_line{
+    0%{
+        top:0;
+    }
+    100%{
+        top:96px;
+    }
+}
+#NIE-download .NIE-qrcode img {
+    display: block;
+    margin: 5px;
+    width: 96px;
+    height: 96px;
+}
+#NIE-download .NIE-button-ios, #NIE-download .NIE-button-android {
+    float: left;
+    margin-left: 7px;
+    width: 174px;
+    height: 50px;
+}
+#NIE-download .NIE-button-ios {
+    margin-bottom: 6px;
+    background: url(img/aside/download_ios.png);
+}
+#NIE-download .NIE-button-android {
+    background: url(img/aside/download_android.png);
+}
+#NIE-download .btn-pc {
+    float: left;
+    margin-top: 6px;
+    width: 393px;
+    height: 50px;
+    background: url(img/aside/download_pc.png);
+}
+#NIE-download .btn-pc {
+    width: 287px;
+    background: url(img/aside/btn-dldwin.png) no-repeat;
+}
+#NIE-download .btn-dldmac {
+    width: 287px;
+    background: url(img/aside/btn-dldmac.png) no-repeat;
+}
+.aside .title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #494b6b;
+}
+.aside .guide .btn-more {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 19px;
+    height: 19px;
+    background: url(img/aside/btn_more.png);
+}
+.aside .guide .guide-special {
+    width: 300px;
+    overflow: hidden;
+}
+.aside .guide .guide-special .guide-item {
+    float: left;
+    margin-right: 10px;
+}
+.aside .guide .guide-special .guide-link {
+    display: block;
+    width: 138px;
+    height: 110px;
+    border: 1px solid #d5d9e3;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+.aside .guide .guide-special .guide-cover {
+    width: 100%;
+    height: 88px;
+    overflow: hidden;
+}
+.aside .guide .guide-special .guide-link .guide-pic {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+.aside .guide .guide-special .guide-link:hover .guide-pic {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.aside .guide .guide-special .guide-title {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    color: #9fa6b4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.aside .guide .guide-list {
+    margin: 20px 0;
+}
+.aside .guide .guide-list .guide-item {
+    margin-top: 18px;
+    width: 100%;
+    height: 16px;
+}
+.aside .guide .guide-list .guide-link {
+    float: left;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    color: #666a73;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+.aside .guide .guide-list .guide-link:hover {
+    color: #ff613c;
+}
+.aside .guide .guide-special .guide-link:hover {
+    border: 1px solid #ff613c;
+}
+</style>
+<div class="aside">
+    <div id="NIE-download">
+        <div class="NIE-qrcode">
+            <img src="https://adl.netease.com/d/g/tx/c/fab/qr">
+        </div>
+        <a class="NIE-button-ios" target="_blank" href="javascript:;"></a>
+        <a class="NIE-button-android" target="_blank" href="javascript:;"></a>
+        <a class="btn-pc" href="javascript:;" target="_blank"></a>
+        <a class="btn-pc btn-dldmac" href="javascript:;" target="_blank"></a>
+    </div>  
+    <div class="guide" style="display: block;">
+        <h3 class="title">大荒热闻</h3>
+        <a class="btn-more" href="javascript:;" target="_blank"></a>
+        <ul class="guide-special">
+            <li class="guide-item">
+                <a class="guide-link" href="javascript:;" title="少侠朝思暮想的少年飞驰现已重新上线" target="_blank">
+                    <div class="guide-cover">
+                        <img class="guide-pic" src="img/aside/aside1.jpg" alt="少侠朝思暮想的少年飞驰现已重新上线">
+                    </div>
+                    <span class="guide-title">【爆料】少侠朝思暮想的少年飞驰现已重新上线</span>
+                </a>
+            </li>
+            <li class="guide-item">
+                <a class="guide-link" href="javascript:;" title="9月6日维护，大荒游学记诚邀你参加" target="_blank">
+                    <div class="guide-cover">
+                        <img class="guide-pic" src="img/aside/aside2.jpg" alt="9月6日维护，大荒游学记诚邀你参加">
+                    </div>
+                    <span class="guide-title">【爆料】9月6日维护，大荒游学记诚邀你参加</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="guide-list">
+            <li class="guide-item">
+                <a class="guide-link" href="javascript:;" title="欢迎新生入学！新编大荒教材新鲜出炉" target="_blank">【牛图】欢迎新生入学！新编大荒教材新鲜出炉</a>
+            </li>
+            <li class="guide-item">
+                <a class="guide-link" href="javascript:;" title="8月23日维护，黑白无常喊你来抓小鬼啦" target="_blank">【爆料】8月23日维护，黑白无常喊你来抓小鬼啦</a>
+            </li>
+            <li class="guide-item">
+                <a class="guide-link" href="javascript:;" title="8月9日维护，爱她，就送她玫瑰花圃吧" target="_blank">【爆料】8月9日维护，爱她，就送她玫瑰花圃吧</a>
+            </li>
+            <li class="guide-item">
+                <a class="guide-link" href="javascript:;" title="选择一位厮守到老，你会选择谁呢？" target="_blank">【牛图】选择一位厮守到老，你会选择谁呢？</a>
+            </li>
+            <li class="guide-item"><a class="guide-link" href="javascript:;" title="游戏更新后，全天候天气系统上线" target="_blank">【爆料】游戏更新后，全天候天气系统上线</a>
+            </li>
+        </ul>
+    </div>
+</div>

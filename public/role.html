@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>《天下》手游官方网站_网易顶级品质旗舰，天下大逃杀之江南生还者玩法正式上线</title>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+    .loading {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 99;
+        background: center top url(img/role/load_bg.jpg) no-repeat;
+        background-color: #27a0f1;
+        background-size: 100% 100%;
+        position: fixed;
+    }
+    .loading .loading-logo {
+        width: 123px;
+        height: 79px;
+        margin-left: -63px;
+        margin-top:-60px;
+        top: 50%;
+        left: 50%;
+        background: center url(img/role/load_logo.png) no-repeat;
+        position: absolute;
+    }
+    .loading .precent {
+        position: absolute;
+        color: #fff;
+        width: 100%;
+        top: 50%;
+        margin-top:40px;
+        font-size: 12px;
+        text-align: center;
+        z-index: inherit;
+    }
+    .loading .rotate {
+        width: 306px;
+        height: 340px;
+        position: absolute;
+        left: 50%;
+        margin-left: -154px;
+        margin-top:-170px;
+        top: 50%;
+        background: center url(img/role/load_arc.png) no-repeat;
+        animation: rotate 8s 0s linear infinite,opct 2s 0s linear;
+        -webkit-animation: rotate 8s 0s linear infinite,opct 2s 0s linear;
+        -moz-animation: rotate 8s 0s linear infinite,opct 2s 0s linear;
+        -ms-animation: rotate 8s 0s linear infinite,opct 2s 0s linear;
+    }
+    @keyframes rotate{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes rotateR{
+        0%{
+            transform: rotate(360deg);
+        }
+        100%{
+            transform: rotate(0deg);
+        }
+    }
+    @keyframes opct{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    .loading .rotate .loading-icon {
+        width: 87px;
+        height: 87px;
+        position: absolute;
+        animation: rotateR 8s 0s linear infinite,opct 2s 0s linear;
+    }
+    .loading .rotate .loading-icon-0 {
+        top: 62px;
+        left: 220px;
+        background: center url(img/role/load-0.png) no-repeat;
+    }
+    .loading .rotate .loading-icon-1 {
+        top: 0;
+        left: 110px;
+        background: center url(img/role/load-1.png) no-repeat;
+    }
+    .loading .rotate .loading-icon-2 {
+    top: 190px;
+    left: 220px;
+    background: center url(img/role/load-2.png) no-repeat;
+}
+.loading .rotate .loading-icon-3 {
+    top: 254px;
+    left: 110px;
+    background: center url(img/role/load-3.png) no-repeat;
+}
+.loading .rotate .loading-icon-4 {
+    top: 62px;
+    left: 0;
+    background: center url(img/role/load-4.png) no-repeat;
+}
+.loading .rotate .loading-icon-5 {
+    top: 190px;
+    left: 0;
+    background: center url(img/role/load-5.png) no-repeat;
+}
+    </style>
+    <script src="js/jquery-3.2.1.js"></script>
+</head>
+<body>
+    <div class="loading" id="myloading"  >
+        <a href="javascript:;" class="loading-logo"></a>
+        <p class="precent" id="precent"><span>1</span>%</p>
+        <div class="rotate">
+            <div class="loading-icon loading-icon-0"></div>
+            <div class="loading-icon loading-icon-1"></div>
+            <div class="loading-icon loading-icon-2"></div>
+            <div class="loading-icon loading-icon-3"></div>
+            <div class="loading-icon loading-icon-4"></div>
+            <div class="loading-icon loading-icon-5"></div>
+        </div>
+        <p class="dec"></p>
+    </div>
+    <script>
+        function add(){
+            var $time=$('#precent span')
+            var now=parseInt($time.html());
+            now++;
+            if(now>=100){
+                clearInterval(loadtime)
+                $('#myloading').hide()
+            }
+            $time.html(now);
+        }
+        var loadtime=setInterval(add,1000);
+        document.onreadystatechange=function(){
+            if(document.readyState=="complete"){
+                clearInterval(loadtime)
+                loadtime=setInterval(add,100)
+                console.log("end")
+            }
+        }
+    </script>
+    <style>
+        .contanier{
+            min-width: 1200px;
+            height: 946px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .part {
+            height: 946px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            -webkit-transform-origin: left top;
+            -moz-transform-origin: left top;
+            -ms-transform-origin: left top;
+            transform-origin: left top;
+            overflow: hidden;
+            background-color: #fff;
+            z-index: 1;
+            -webkit-transition: transform .9s ease 0s;
+            -moz-transition: transform .9s ease 0s;
+            -ms-transition: transform .9s ease 0s;
+            transition: transform .9s ease 0s;
+        }
+        .part1 .content{
+            background:url(img/role/tj/bg.jpg) no-repeat;
+            
+        }
+        .part2 .content{
+            background:url(img/role/tx/bg.jpg) no-repeat;
+        }
+        .part3 .content{
+            background:url(img/role/wl/bg.jpg) no-repeat;
+        }
+        .part4 .content{
+            background:url(img/role/yl/bg.jpg) no-repeat;
+        }
+        .part5 .content{
+            background:url(img/role/bx/bg.jpg) no-repeat;
+        }
+        .part6 .content{
+            background:url(img/role/yj/bg.jpg) no-repeat;
+        }
+        .part .content{
+            width:100%;
+            transform: translateX(-253px) skewX(15deg);
+            height: 946px;
+            position: absolute;
+            -webkit-transform-origin: left top;
+            -moz-transform-origin: left top;
+            -ms-transform-origin: left top;
+            transform-origin: left top;
+            background-size:100%;
+            background-position: center;
+        }
+       .part .L-Role {
+            position: absolute;
+            left: 50%;
+            z-index: 3;
+            opacity: 0;
+        }
+        .content .M-Role {
+            width: 963px;
+            height: 1089px;
+            -webkit-transform: translateX(-203px);
+            -moz-transform: translateX(-203px);
+            -ms-transform: translateX(-203px);
+            transform: translateX(-203px);
+            top: 0;
+            position: absolute;
+            opacity: 1;
+            z-index: 2;
+        }
+        .part2 .content .M-Role {
+            width: 867px;
+            height: 1037px;
+            -webkit-transform: translateX(-83px);
+            -moz-transform: translateX(-83px);
+            -ms-transform: translateX(-83px);
+            transform: translateX(-83px);
+            top: -48px;
+        }
+        .part3 .content .M-Role {
+            width: 1719px;
+            height: 964px;
+            -webkit-transform: translateX(-270px);
+            -moz-transform: translateX(-270px);
+            -ms-transform: translateX(-270px);
+            transform: translateX(-270px);
+            top: 0px;
+        }
+        .part4 .content .M-Role {
+            width: 1334px;
+            height: 945px;
+            -webkit-transform: translateX(35px);
+            -moz-transform: translateX(35px);
+            -ms-transform: translateX(35px);
+            transform: translateX(35px);
+            top: 13px;
+        }
+        .part5 .content .M-Role {
+            width: 1612px;
+            height: 911px;
+            -webkit-transform: translateX(-480px);
+            -moz-transform: translateX(-480px);
+            -ms-transform: translateX(-480px);
+            transform: translateX(-480px);
+            top: 38px;
+        }
+        .part6 .content .M-Role {
+            width: 1063px;
+            height: 947px;
+            -webkit-transform: translateX(-347px);
+            -moz-transform: translateX(-347px);
+            -ms-transform: translateX(-347px);
+            transform: translateX(-347px);
+            top: 0;
+        }
+        .L-Role, .M-Role {
+            -webkit-transition: all .9s ease 0s;
+            -moz-transition: all .9s ease 0s;
+            -ms-transition: all .9s ease 0s;
+            transition: all .9s ease 0s;
+        }
+        .part.cur .rodeArt .border{
+            display: block;
+        }
+        .part.detail .rodeArt .border{
+            display: none;
+        }
+        .part.detail .centerDiv{
+            display: none;
+        }
+        .part.detail .M-Role{
+            opacity: 0;
+        }
+        .part.detail .L-Role{
+            opacity: 1;
+        }
+        .part .rodeArt {
+            height: 877px;
+            position: absolute;
+            left: 183px;
+            top: 50px;
+        }
+        .rodeArt .border {
+            width: 100%;
+            height: 850px;
+            border: 5px solid #fff;
+            -webkit-transform: translateX(-30px) skewX(-15deg);
+            -moz-transform: translateX(-30px) skewX(-15deg);
+            -ms-transform: translateX(-30px) skewX(-15deg);
+            transform: translateX(-30px) skewX(-15deg);
+            position: relative;
+            z-index: 3;
+            display: none;
+        }
+        .border {
+            -webkit-animation: opct2 .9s ease 0s 1 normal;
+            -moz-animation: opct2 .9s ease 0s 1 normal;
+            -ms-animation: opct2 .9s ease 0s 1 normal;
+            animation: opct2 .9s ease 0s 1 normal;
+        }
+        @keyframes opct2{
+            0%{
+                opacity: 0;
+                -webkit-transform: scale(1.3) translateX(-30px) skewX(-15deg);
+                -moz-transform: scale(1.3) translateX(-30px) skewX(-15deg);
+                -ms-transform: scale(1.3) translateX(-30px) skewX(-15deg);
+                transform: scale(1.3) translateX(-30px) skewX(-15deg);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: scale(1) translateX(-30px) skewX(-15deg);
+                -moz-transform: scale(1) translateX(-30px) skewX(-15deg);
+                -ms-transform: scale(1) translateX(-30px) skewX(-15deg);
+                transform: scale(1) translateX(-30px) skewX(-15deg);
+            }
+        }
+        .content .centerDiv {
+            width: 100%;
+            height: 850px;
+            position: absolute;
+            z-index: 5;
+            top:0;
+            left: 183px;
+            -webkit-transition: all .9s ease 0s;
+            -moz-transition: all .9s ease 0s;
+            -ms-transition: all .9s ease 0s;
+            transition: all .9s ease 0s;
+        }
+        .part.left .content .centerDiv{
+            top: -320px;
+            left:439px;
+        }
+        .part.right .content .centerDiv{
+            top: 235px;
+             left: 5px;
+        }
+        .content .centerDiv img{
+            position: absolute;
+            top: 437px;
+            left:50%;
+            width: 96px;
+            height: 147px;
+            z-index: 5;
+            margin-left:-83px;
+            cursor: pointer;
+            transform-origin: left top;
+        }
+        .part2 .content .L-Role {
+            width: 583px;
+            height: 845px;
+            margin-left: -387px;
+            top: 0;
+        }
+        @keyframes fly{
+            0% {
+                -webkit-transform: translateY(-20px);
+                -moz-transform: translateY(-20px);
+                -ms-transform: translateY(-20px);
+                transform: translateY(-43px);
+            }
+            100% {
+                -webkit-transform: translateY(0px);
+                -moz-transform: translateY(0px);
+                -ms-transform: translateY(0px);
+                transform: translateY(0px);
+            }
+        }
+        .flyTxt {
+            top:0;
+            position: absolute;
+            width: 210px;
+            height: 300px;
+            bottom: 100px;
+            left: 100px;
+            z-index: 4;
+            display: none;
+            -webkit-animation: fly .6s ease 0s 1 normal;
+            -moz-animation: fly .6s ease 0s 1 normal;
+            -ms-animation: fly .6s ease 0s 1 normal;
+            animation: fly .6s ease 0s 1 normal;
+            -webkit-transition: top .9s ease 0s;
+            -moz-transition: top .9s ease 0s;
+            -ms-transition: top .9s ease 0s;
+            transition: top .9s ease 0s;
+        }
+        .part.detail .flyTxt {
+            top: 100px;
+            left: 100px;
+            display: block;
+        }
+        .part2.detail .flyTxt .title {
+            background: center url(img/role/tx/title-detail.png) no-repeat;
+            height: 80px;
+            margin-left: 40px;
+        }
+        .flyTxt .title {
+            -webkit-transition: all .9s ease 0s;
+            -moz-transition: all .9s ease 0s;
+            -ms-transition: all .9s ease 0s;
+            transition: all .9s ease 0s;
+        }
+        .part .rodeArt .flyTxt p {
+            -webkit-transform: skewX(-15deg);
+            -moz-transform: skewX(-15deg);
+            -ms-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+            color: #fff;
+            font-size: 20px;
+            line-height: 30px;
+            width: 176px;
+            margin-left: 29px;
+        }
+         .part.detail .flyTxt p {
+            width: 350px;
+        }
+        .part .rodeArt .property .title-dw {
+            height: 70px;
+            margin-left: 16px;
+            background: left center url(img/role/t_dingwei.png) no-repeat;
+        }
+        .part.detail .rodeArt .property, .part.detail .rodeArt .power,  .part.detail .rodeArt .dl-ewm {
+            display: block;
+        }
+        .part .rodeArt .property {
+            position: absolute;
+            width: 360px;
+            height: 120px;
+            top: 262px;
+            left: 85px;
+            display: none;
+            z-index: 4;
+            -webkit-animation: fly .6s ease 0s 1 normal;
+            -moz-animation: fly .6s ease 0s 1 normal;
+            -ms-animation: fly .6s ease 0s 1 normal;
+            animation: fly .6s ease 0s 1 normal;
+        }
+        .part .rodeArt .property p {
+            font-size: 16px;
+            color: #fff;
+            -webkit-transform: skewX(-15deg);
+            -moz-transform: skewX(-15deg);
+            -ms-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+        }
+         .part .rodeArt .power {
+            width: 216px;
+            height: 170px;
+            position: absolute;
+            top: 159px;
+            left: -93px;
+            display: none;
+        }
+         .part .rodeArt .dl-ewm {
+            width: 139px;
+            height: 170px;
+            position: absolute;
+            top: 159px;
+            left: 158px;
+            display: none;
+        }
+        .nav {
+            position: absolute;
+            width: 324px;
+            top: 300px;
+            right: 100px;
+        }
+        .hide {
+            display: none;
+        }
+        .nav li {
+            width: 199px;
+            height: 76px;
+            float: right;
+            margin-bottom: 30px;
+            background: 124px center url(img/role/nav-1.png) no-repeat;
+            cursor: pointer;
+            -webkit-transition: background-image .2s ease 0s;
+            -moz-transition: background-image .2s ease 0s;
+            -ms-transition: background-image .2s ease 0s;
+            transition: background-image .2s ease 0s;
+        }
+        .nav .nav-0 {
+            background-image: url(img/role/nav-0.png);
+            margin-right: -30px;
+        }
+        .nav .nav-1 {
+            background-image: url(img/role/nav-1.png);
+            margin-right: 0;
+        }
+         .nav .nav-2 {
+            background-image: url(img/role/nav-2.png);
+            margin-right: 30px;
+        }
+        .nav .nav-3 {
+            background-image: url(img/role/nav-3.png);
+            margin-right: 60px;
+        }
+         .nav .nav-4 {
+            background-image: url(img/role/nav-4.png);
+            margin-right: 90px;
+        }
+        .nav p {
+            font-size: 20px;
+            line-height: 77px;
+            color: #fff;
+            padding-left: 25px;
+            width: 120px;
+            background-position: 0 center;
+        }
+        .nav li:hover p {
+            color: #283440;
+            background: 0 center url(img/role/nav-bg.png) no-repeat;
+        }
+        .nav .nav-4:hover {
+            background-image: url(img/role/nav-4_h.png);
+            margin-right: 90px;
+        }
+      
+    </style>
+    <div class="contanier">
+        <div class="part part6">
+            <div class="content">
+                <div class="M-Role">
+                    <img class="L-Role-img-1"  src="img/role/tj/role_tj.png">
+                </div>
+                <div class="centerDiv">
+                        <img src="img/role/tx/lable.png" alt="">
+                    </div>
+                    <div class="rodeArt">
+                        <div class="border">
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="part part1">
+            <div class="content">
+                <div class="M-Role">
+                    <img class="L-Role-img-1"  src="img/role/tj/role_tj.png">
+                </div>
+                <div class="centerDiv">
+                        <img src="img/role/tx/lable.png" alt="">
+                    </div>
+                    <div class="rodeArt">
+                        <div class="border">
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="part part2">
+                <div class="content">
+                    <div class="M-Role">
+                        <img class="L-Role-img-1"  src="img/role/tx/roletx.png">
+                    </div>
+                    <div class="L-Role">
+                        <img class="L-Role-img-1"  src="img/role/tx/tx1.png">
+                    </div>
+                    <div class="centerDiv">
+                        <img src="img/role/tx/lable.png" alt="">
+                    </div>
+                    <div class="rodeArt">
+                        <div class="border">
+                        </div>
+                        <div class="flyTxt">
+                            <h2 class="title"></h2>
+                            <p>太虚无极驭灵兽， 八卦咒诀藏锋芒。<br> 驱鬼降妖得意事，鸿钧仙气万丈长。
+                            </p>
+                        </div>
+                        <div class="property">
+                            <div class="title-dw"></div>
+                            <p>
+                                远程 输出 控制
+                            </p>
+                            <div class="title-sx"></div>
+                          
+                            <div class="power">
+                                <img  src="img/role/tx/power.png">
+                            </div>
+                            <div class="dl-ewm">
+                                <img src="img/role/dl-ewm.png">
+                            </div>
+                            <div class="role-slide">
+                                <div class="role-1 curr"></div>
+                                <div class="role-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="part part3">    
+                <div class="content">
+                        <div class="M-Role">
+                            <img class="L-Role-img-1"  src="img/role/wl/role_wl.png">
+                        </div>
+                        <div class="L-Role">
+                            <img class="L-Role-img-1"  src="img/role/tx/tx1.png">
+                        </div>
+                        <div class="centerDiv">
+                            <img src="img/role/tx/lable.png" alt="">
+                        </div>
+                        <div class="rodeArt">
+                            <div class="border">
+                            </div>
+                            <div class="flyTxt">
+                                <h2 class="title"></h2>
+                                <p>太虚无极驭灵兽， 八卦咒诀藏锋芒。<br> 驱鬼降妖得意事，鸿钧仙气万丈长。
+                                </p>
+                            </div>
+                            <div class="property">
+                                <div class="title-dw"></div>
+                                <p>
+                                    远程 输出 控制
+                                </p>
+                                <div class="title-sx"></div>
+                              
+                                <div class="power">
+                                    <img  src="img/role/tx/power.png">
+                                </div>
+                                <div class="dl-ewm">
+                                    <img src="img/role/dl-ewm.png">
+                                </div>
+                                <div class="role-slide">
+                                    <div class="role-1 curr"></div>
+                                    <div class="role-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+        </div>
+        <div class="part part4">
+                <div class="content">
+                        <div class="M-Role">
+                            <img class="L-Role-img-1"  src="img/role/yl/role_yl.png">
+                        </div>
+                        <div class="centerDiv">
+                                <img src="img/role/tx/lable.png" alt="">
+                            </div>
+                            <div class="rodeArt">
+                                <div class="border">
+                                </div>
+                            </div>
+                </div>
+
+        </div>
+        <div class="part part5">
+                <div class="content">
+                        <div class="M-Role">
+                            <img class="L-Role-img-1"  src="img/role/bx/role_bx.png">
+                        </div>
+                        <div class="centerDiv">
+                                <img src="img/role/tx/lable.png" alt="">
+                            </div>
+                            <div class="rodeArt">
+                                <div class="border">
+                                </div>
+                            </div>
+                </div>
+
+        </div>
+        <div class="part part6">
+                <div class="content">
+                        <div class="M-Role">
+                            <img class="L-Role-img-1"  src="img/role/yj/role_yj.png">
+                        </div>
+                        <div class="centerDiv">
+                                <img src="img/role/tx/lable.png" alt="">
+                            </div>
+                            <div class="rodeArt">
+                                <div class="border">
+                                </div>
+                            </div>
+                </div>
+
+        </div>
+        <div class="part part1">
+            <div class="content">
+                <div class="M-Role">
+                    <img class="L-Role-img-1"  src="img/role/tj/role_tj.png">
+                </div>
+                <div class="centerDiv">
+                        <img src="img/role/tx/lable.png" alt="">
+                    </div>
+                    <div class="rodeArt">
+                        <div class="border">
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <ul class="nav hide" >
+            <li class="nav-0">
+                <p>觉醒技</p>
+            </li>				
+            <li class="nav-1">
+                <p>技能展示</p>
+            </li>
+            <li class="nav-2">
+                <p>武器装备</p>
+            </li>
+            <li class="nav-3" style="visibility: visible;">
+                <p>门派轻功</p>
+            </li>
+            <li class="nav-4">
+            </li>
+        </ul>
+    </div>
+    <script>
+        function setSize(){
+            if(innerWidth>=1200)
+            var size=(innerWidth+253)/6,outsize=innerWidth+235;
+            else
+            var size=1453/6,outsize=1435;
+            var count=-1;
+            for(var part of $('.contanier .part')){
+                $(part).css({
+                    "width":outsize+"px",
+                    "transform":`translateX(${count*size}px) skew(-15deg)`,
+                    "z-index":$(part).index()
+                })
+                count++;
+            }
+            $('.rodeArt').css({
+                'width':size-60+"px"
+            })
+            $('.centerDiv').css({
+                'width':size-60+"px"
+            })
+            if(innerWidth<1678)
+            $('.content').css('backgroundSize',"auto 100%")
+            else
+            $('.content').css('backgroundSize',"100%")
+            if($('.left'))
+            $('.left').removeClass('left')
+            if($('.right'))
+            $('.right').removeClass('right')
+            if($('.detail'))
+            $('.detail').removeClass('detail')
+        }
+        $('.part').mouseenter(function(){
+            $(this).addClass('cur')
+        })
+        $('.part').mouseleave(function(){
+            $(this).removeClass('cur')
+        })
+        $('.centerDiv img').click(function(){
+            if($('.left'))
+            $('.left').removeClass('left')
+            if($('.right'))
+            $('.right').removeClass('right')
+            if($('.detail'))
+            $('.detail').removeClass('detail')
+            $thispart=$(this).parent().parent().parent();
+            if($thispart.index()==$('.part').length-1){
+                $thispart=$('.part:nth-child(2)')
+            }
+            if($thispart.index()==0){
+                $thispart=$('.part:nth-child(7)')
+            }
+            $thispart.addClass('detail').prev().addClass('left').next().next().addClass('right');
+            $('.nav').css('zIndex',$thispart.css('zIndex'))
+            $('.nav').removeClass('hide');
+            var n=$thispart.index();
+            var width=parseInt($thispart.css("width"))
+            for(var elem of $('.part')){
+                $part=$(elem)
+                if($part.index()<n){
+                    $part.css({"transform":`translateX(${213.48*($part.index()-n)}px) skew(-15deg)`})
+                }
+                else if($part.index()==n){
+                    $part.css({"transform":`translateX(213.48px) skew(-15deg)`})
+                }else{
+                    $part.css({"transform":`translateX(${width+213.48*($part.index()-n-2)}px) skew(-15deg)`})
+                }
+            }
+
+        })
+        setSize()
+        window.onresize=function(){setSize()}
+    </script>
+</body>
+</html>

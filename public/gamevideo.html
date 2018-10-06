@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>游戏视频</title>
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        a{
+            color: #666a73;
+        }
+        .main{
+            width:100%;
+            background: #fff url(img/news/bg_inpage_head.jpg) 50% 0 no-repeat;
+            position: relative;
+            margin: 0 auto;
+            max-width: 1920px;
+            min-width: 1200px;
+            overflow: hidden;
+        }
+        .wrap{
+            margin:0 auto;
+            position: relative;
+            width: 1200px;
+            margin-top:424px;
+        }
+        .wrap:after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+        .cont{
+            float: left;
+            width:840px;
+            box-shadow: 0 0 10px #eee;
+        }
+        .cont-head{
+            border-bottom:1px solid #494e81;
+            overflow: hidden;
+            position: relative;
+            height: 75px;
+            background: #fff url(img/news/bg_cont.png) 100% 0 no-repeat;
+        }
+        .cont-head .title {
+            float: left;
+            width: 172px;
+            height: 36px;
+            margin-top: 20px;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 36px;
+            text-indent: 28px;
+            color: #fff;
+            background: url(img/news/bg_title.png);
+        }
+        .cont-head .position{
+            float:right;
+            line-height:75px;
+            color: #666a73;
+            font-size: 14px;
+            margin-right:25px;
+        }
+        .video-tab{
+            margin: 0 25px;
+            margin-top:25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #dae1ee;
+        }
+        dt,dd{
+            margin:0;
+        }
+        .video-tab dl::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .video-tab dl dt,.video-tab dl dd{
+            float: left;
+            height:25px;
+        }
+        .video-tab dl dt a{
+            line-height:25px;
+            font-weight: bold;
+            color: #494c74;
+        }
+        .video-tab dl dd a{
+            display: block;
+            margin: 0 4px;
+            padding: 0 14px;
+            height: 23px;
+            font-size: 14px;
+            line-height: 23px;
+            border: 1px solid #a1a8b5;
+            border-radius: 5px;
+        }
+        .video-tab dl dd a.cur{
+             background-color: #9fa6b4;
+             color:#fff;
+        }
+        .video-position{
+            margin:25px;
+        }
+        .video-list{
+            margin-left:25px;  
+        }
+        .video-list{
+            overflow: hidden;
+        }
+        .video-list .video-item{
+            float:left;
+            margin-right:25px;
+            margin-bottom:25px;
+        }
+        .video-list .video-item:hover  .video-cover .video-mask{
+            opacity: 0;
+        }
+        .video-list .video-link {
+            display: block;
+            width: 243px;
+            height: 202px;
+            border: 1px solid #d5d9e3;
+        }
+        .video-list .video-item:hover .video-link{
+            border-color:red;
+        }
+        .video-list .video-link .video-cover{
+            height:153px;
+            padding-top:1px;
+            position: relative;
+        }
+        .video-list .video-link .video-cover .video-pic{
+            width:100%;
+            height:100%;
+        }
+        .video-list .video-link .video-cover .video-mask{
+            position: absolute;
+            width:100%;
+            height:100%;
+            background: rgba(0,0,0,.3);
+            top:0;
+            left:0;
+            opacity: 1;
+            transition: all .2s linear;
+        }
+
+        .video-list .video-title{
+            display: block;
+            margin:5px  10px;
+            height:20px;
+            font-size:14px;
+            width: 220px;
+            overflow:hidden;
+            white-space:nowrap;
+            text-overflow: ellipsis;
+        }
+        .video-list .video-author{
+            display: block;
+            margin: 0 auto;
+            width: 220px;
+            text-align: center;
+            color: #9fa6b4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size:12px;
+        }
+        .cont-page {
+            width: 100%;
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+        }
+        .cont-page a{
+            border-radius: 5px;
+            color: #fff;
+            background-color: #9a9cae;
+           
+        }
+        .cont-page a,.cont-page span{
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 3px;
+            padding: 0 8px;
+            height: 22px;
+            font-size: 14px;
+            line-height: 22px;
+            text-align: center;
+        }
+        .cont-page span{
+            color: #9a9cae;
+        }
+        .cont-page a.curpage{
+            background-color: #ff613c;
+        }
+        .wrap::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header id="header"></header>
+    <div class="main">
+        <div class="wrap">
+            <div class="section">
+                <div class="cont video">
+                    <div class="cont-head">
+                        <span class="title">游戏视频</span>
+                        <div class="position">
+                            你的当前位置：
+                            <a href="http://tx.163.com/index.html">首页</a>
+                            &gt;
+                            <a href="http://tx.163.com/video/">游戏视频</a>
+                        </div>
+                    </div>
+                    <div class="video-tab">
+                        <dl>
+                            <dt><a href="http://tx.163.com/video/zuozhe/">作者：</a></dt>
+                            <dd><a class="cur" href="http://tx.163.com/video/zuozhe/guanfang/">官方</a></dd>
+                            <dd><a href="http://tx.163.com/video/zuozhe/wanjia/">玩家</a></dd>
+                        </dl>
+                        <dl>
+                            <dt><a href="http://tx.163.com/video/menpai/">门派：</a></dt>
+                            <dd><a href="http://tx.163.com/video/menpai/bingxin/">冰心</a></dd>
+                            <dd><a href="http://tx.163.com/video/menpai/yijian/">弈剑</a></dd>
+                            <dd><a href="http://tx.163.com/video/menpai/taixu/">太虚</a></dd>
+                            <dd><a href="http://tx.163.com/video/menpai/yunlu/">云麓</a></dd>
+                            <dd><a href="http://tx.163.com/video/menpai/tianji/">天机</a></dd>
+                        <dd><a href="http://tx.163.com/video/menpai/wangliang/">魍魉</a></dd>
+                        </dl>
+                        <dl>
+                            <dt><a href="http://tx.163.com/video/wanfa/">玩法：</a></dt>
+                            <dd><a href="http://tx.163.com/video/wanfa/richang/">日常</a></dd>
+                            <dd><a href="http://tx.163.com/video/wanfa/fuben/">副本</a></dd>
+                            <dd><a href="http://tx.163.com/video/wanfa/jingji/">竞技</a></dd>
+                            <dd><a href="http://tx.163.com/video/wanfa/zhuzhuang/">铸装</a></dd>
+                            <dd><a href="http://tx.163.com/video/wanfa/hechong/">合宠</a></dd>
+                        </dl>
+                        <dl>
+                            <dt><a href="http://tx.163.com/video/neirong/">内容：</a></dt>
+                            <dd><a href="http://tx.163.com/video/neirong/shilu/">实录</a></dd>
+                            <dd><a href="http://tx.163.com/video/neirong/mmd/">MMD</a></dd>
+                            <dd><a href="http://tx.163.com/video/neirong/juqing/">剧情</a></dd>
+                            <dd><a href="http://tx.163.com/video/neirong/tongren/">同人</a></dd>
+                        </dl>
+                    </div>
+                    <div class="video-position">
+                        分类：<a href="http://tx.163.com/video/">全部</a>
+                        &gt; <a href="http://tx.163.com/video/zuozhe/">作者</a> &gt; <a href="http://tx.163.com/video/zuozhe/guanfang/">官方</a>
+                    </div>
+                    <div class="video-list">
+                        <div class="video-item">
+                            <a class="video-link" href="http://tx.163.com/video/20170703/25042_698139.html" title="《天下》手游吴磊 少年玉玑子 花絮视频高清下载" target="_blank">
+                                <div class="video-cover">
+                                    <img class="video-pic" alt="《天下》手游吴磊 少年玉玑子 花絮视频高清下载" src="./img/header/3468d4fb-d2f6-4d7d-a79e-5de39246a89b">
+                                    <i class="video-mask"></i>
+                                    <i class="video-icon"></i>
+                                </div>
+                                <span class="video-title">【游戏视频】《天下》手游吴磊 少年玉玑子 花絮视频高清下载</span>
+                                <span class="video-author">作者：天下手游</span>
+                            </a>
+                        </div>
+                        <div class="video-item">
+                                <a class="video-link" href="http://tx.163.com/video/20170525/25042_691706.html" title="【第九届竞技场季后赛】IOS天下无双王者段" target="_blank">
+                                    <div class="video-cover">
+                                        <img class="video-pic" alt="【第九届竞技场季后赛】IOS天下无双王者段" src="./img/header/9d695697-49eb-49c1-92b2-da6d038e2345">
+                                        <i class="video-mask"></i>
+                                        <i class="video-icon"></i>
+                                    </div>
+                                    <span class="video-title">【游戏视频】【第九届竞技场季后赛】IOS天下无双王者段</span>
+                                    <span class="video-author">作者：蓝空天</span>
+                                </a>
+                        </div>
+                        <div class="video-item">
+                            <a class="video-link" href="http://tx.163.com/video/20170525/25042_691705.html" title="【第九届竞技场季后赛】安卓紫禁之巅" target="_blank">
+                                <div class="video-cover">
+                                    <img class="video-pic" alt="【第九届竞技场季后赛】安卓紫禁之巅" src="./img/header/288c7b94-0d14-4a31-ae0c-0db0a9a5a20c">
+                                    <i class="video-mask"></i>
+                                    <i class="video-icon"></i>
+                                </div>
+                                <span class="video-title">【游戏视频】【第九届竞技场季后赛】安卓紫禁之巅</span>
+                                <span class="video-author">作者：蓝空天</span>
+                            </a>
+                        </div>
+                        <div class="video-item">
+                            <a class="video-link" href="http://tx.163.com/video/20170525/25042_691704.html" title="【第九届竞技场季后赛】IOS情动大荒" target="_blank">
+                                <div class="video-cover">
+                                    <img class="video-pic" alt="【第九届竞技场季后赛】IOS情动大荒" src="./img/header/c48a9435-9728-4ad9-9a91-b465fbc18712">
+                                    <i class="video-mask"></i>
+                                    <i class="video-icon"></i>
+                                </div>
+                                <span class="video-title">【游戏视频】【第九届竞技场季后赛】IOS情动大荒</span>
+                                <span class="video-author">作者：蓝空天</span>
+                            </a>
+                        </div>
+                        <div class="video-item">
+                            <a class="video-link" href="http://tx.163.com/video/20170525/25042_691702.html" title="【第九届竞技场季后赛】安卓莫问今朝" target="_blank">
+                                <div class="video-cover">
+                                    <img class="video-pic" alt="【第九届竞技场季后赛】安卓莫问今朝" src="./img/header/72b3a751-2987-46b7-a0c9-7b796e35c090">
+                                    <i class="video-mask"></i>
+                                    <i class="video-icon"></i>
+                                </div>
+                                <span class="video-title">【游戏视频】【第九届竞技场季后赛】安卓莫问今朝</span>
+                                <span class="video-author">作者：蓝空天</span>
+                            </a>
+                        </div>
+                        <div class="video-item">
+                            <a class="video-link" href="http://tx.163.com/video/20170506/25042_687727.html" title="混服：天荒不老城vs皇室荣耀" target="_blank">
+                                <div class="video-cover">
+                                    <img class="video-pic" alt="混服：天荒不老城vs皇室荣耀" src="./img/header/f5282a1e-161e-49ca-b07f-85c352bee515">
+                                    <i class="video-mask"></i>
+                                    <i class="video-icon"></i>
+                                </div>
+                                <span class="video-title">【游戏视频】混服：天荒不老城vs皇室荣耀</span>
+                                <span class="video-author">作者：蓝空天</span>
+                            </a>
+                        </div>
+                        <div class="video-item">
+                            <a class="video-link" href="http://tx.163.com/video/20170506/25042_687725.html" title="IOS：傲视天下vs震铄古今" target="_blank">
+                                <div class="video-cover">
+                                    <img class="video-pic" alt="IOS：傲视天下vs震铄古今" src="./img/header/e2819696-85dd-4b4d-b6c3-9298a12b077d">
+                                    <i class="video-mask"></i>
+                                    <i class="video-icon"></i>
+                                </div>
+                                <span class="video-title">【游戏视频】IOS：傲视天下vs震铄古今</span>
+                                <span class="video-author">作者：蓝空天</span>
+                            </a>
+                        </div>
+                        <div class="video-item">
+                            <a class="video-link" href="http://tx.163.com/video/20170506/25042_687724.html" title="安卓：龙御天下vs纵横四海" target="_blank">
+                                <div class="video-cover">
+                                    <img class="video-pic" alt="安卓：龙御天下vs纵横四海" src="./img/header/0d68f909-6ea5-49ef-8335-e8509a042e00">
+                                    <i class="video-mask"></i>
+                                    <i class="video-icon"></i>
+                                </div>
+                                <span class="video-title">【游戏视频】安卓：龙御天下vs纵横四海</span>
+                                <span class="video-author">作者：蓝空天</span>
+                            </a>
+                        </div>
+                        <div class="video-item">
+                        <a class="video-link" href="http://tx.163.com/video/20170504/25042_687390.html" title="第二届全明星演兵争霸赛：混服预赛八强" target="_blank">
+                            <div class="video-cover">
+                                <img class="video-pic" alt="第二届全明星演兵争霸赛：混服预赛八强" src="./img/header/01ab131a-82d9-4524-8a84-03cd05f4435a">
+                                <i class="video-mask"></i>
+                                <i class="video-icon"></i>
+                            </div>
+                            <span class="video-title">【游戏视频】第二届全明星演兵争霸赛：混服预赛八强</span>
+                            <span class="video-author">作者：蓝空天</span>
+                        </a>
+                    </div>
+                    </div>
+                    <div class="cont-page">
+                        <a href="#" class="curpage">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">下一页</a>
+                        <span>第1页 共3页</span>
+                    </div>
+            </div>
+            <div id="side"></div>
+        </div>
+        </div>
+        <div id="bottom"></div>
+    </div>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/bottom.js"></script>
+    <script src="js/aside.js"></script>
+</body>
+</html>

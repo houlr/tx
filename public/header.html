@@ -1,0 +1,157 @@
+<style type="text/css">
+    .nav{color: #657288;transition: all .3s;z-index:999;position:absolute;width:100%;background: url("img/header/bg_nav.png");background-size: 100%;}
+    .nav .wrap{width: 1200px;margin:0 auto;position: relative;height:70px;padding:3px 0;}
+    .nav .wrap-left{float: left;overflow: hidden;}
+    .nav .wrap .download-icon{opacity:0;float:left;margin-left:-110px;border-right:1px solid #ccc;padding-right:10px;font-size:0;transition: all .3s;}
+    .nav .wrap .download-icon span{float: left; width:16px;font-size:16px;line-height: 17px;margin-right:10px;}
+    .nav .wrap .download-icon img{width: 70px;height: 70px;}
+    .nav .wrap .logo-icon{float: left;vertical-align: middle;height:70px;width:300px;}
+    .nav .wrap .logo-icon a::after{content: "";display: block;clear: both;}
+    .nav .wrap .logo-icon a{float: left;margin:8px 8px;}
+    .nav .wrap .logo-icon p{padding: 0;margin:12px 0;font-size: 14px;line-height:19px;}
+    .nav .wrap .nav-link{float: left;}
+    .nav .wrap .nav-link a{display: inline-block;font-size:20px; line-height:70px;color: #657288;;text-decoration: none;margin:0 20px;}
+    .nav .wrap .qr-btn{float: right;}
+    .qr-btn>a{
+        position: relative;
+        margin: 0 2px;
+        width: 27px;
+        height: 70px;
+        line-height:70px;
+        font-size:0;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .qr-btn .icon{
+        width:27px;height:27px;
+        position: absolute;
+        top:50%;
+        margin-top:-13.5px;
+    }
+    .qr-btn a:hover .arrow{
+        display: block;
+    }
+    .qr-btn a:hover img{
+        display: block;
+    }
+    .qr-btn .arrow{
+        display: none;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        margin-left: -10px;
+        margin-bottom:-3px;
+        width: 0;
+        height: 0;
+        border-bottom: 10px solid #fff;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+    }
+    .qr-btn img{
+        display: none;
+        width:125px;
+        height:125px;
+        position: absolute;
+        bottom:-128px;
+        left:-50px;
+    }
+    .qr-btn .icon-wx{
+        background: url(img/main/icon_wx1.png)
+    }
+    .qr-btn .icon-wb{
+        background: url(img/main/icon_wb1.png)
+    }
+    .qr-btn .icon-music{
+        background: url(img/main/icon_music1.png);
+        animation: aniRound 3s linear infinite;
+    }
+    .qr-btn a:hover .icon-wx{
+        background: url(img/main/icon_wx2.png)
+    }
+    .qr-btn a:hover .icon-wb{
+        background: url(img/main/icon_wb2.png)
+    }
+    .qr-btn a:hover .icon-music{
+        background: url(img/main/icon_music2.png)
+    }
+    @keyframes aniRound{
+            0%{
+                transform: rotateZ(0deg)
+            }
+            100%{
+                transform: rotateZ(360deg)
+            }
+    }
+    .qr-btn>a:last-child{
+        display: none;
+    }
+    .nav.fixed{
+        position: fixed;
+        background: url("img/header/bg_nav_fixed.png");
+        color:#fff;
+    }
+    .nav.fixed .wrap .nav-link a{
+        color:#fff;
+    }
+    .nav.fixed .wrap .download-icon{
+        margin-left:0px;
+        opacity: 1;
+    }
+    .nav .nav-link a.cur, .nav .nav-link a:hover {
+        color: #ff613c;
+    }       
+</style>
+<div class="nav"> 
+<div class="wrap">
+    <div class="wrap-left">
+        <div class="download-icon">
+            <span>扫码下载</span>
+            <img src="./img/header/qr" alt="天下手游">
+        </div>
+        <div class="logo-icon">
+            <a href="#" target="_blank">
+                <img src="./img/header/100" alt="天下手游">
+            </a>
+            <p>真3D极致画面 无缝大世界</p>
+            <p>新服"剑指风流"今日开启</p>
+        </div>
+        <div class="nav-link">
+            <a href="/main.html" target="_blank">首页</a>
+            <a href="/newscenter.html" target="_blank">新闻</a>
+            <a href="/role.html" target="_blank">门派</a>
+            <a href="javascript:;" target="_blank">攻略</a>
+            <a href="/gamevideo.html" target="_blank">视频</a>
+            <a href="javascript:;" target="_blank">同人</a>
+            <a href="javascript:;" target="_blank">论坛</a>
+            <a href="javascript:;" target="_blank">客服</a>
+        </div>
+    </div>
+    <div class="qr-btn">
+        <a href="javascript:;">
+            <i class="icon icon-wx"></i>     
+            <i class="arrow"></i>
+            <img src="./img/header/qrcode_wx_3df932f.jpg" alt="微信二维码">
+        </a>
+        <a href="javascript:;">
+            <i class="icon icon-wb"></i>
+            <i class="arrow"></i>
+            <img src="./img/header/qrcode_wb_8f478f8.jpg" alt="微博二维码">
+        </a>
+        <a href="javascript:;" >
+            <i class="icon icon-music"></i>
+        </a>
+    </div>
+</div>
+</div>
+<script>
+    window.addEventListener("scroll",function(){
+        var nav=document.getElementsByClassName("nav")[0];
+        if(scrollY>80){
+            if(!nav.className.match("fixed")){
+                nav.className="nav fixed";
+            }
+        }else{
+            nav.className="nav";
+        }
+    })
+</script>
